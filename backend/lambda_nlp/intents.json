@@ -1,0 +1,24 @@
+{
+  "intents": [
+    {
+      "name": "saludo",
+      "keywords": ["hola", "buenas", "hey", "saludos"]
+    },
+    {
+      "name": "reservar_cita",
+      "keywords": ["reservar", "agendar", "quiero una cita", "programar cita"]
+    },
+    {
+      "name": "cancelar_cita",
+      "keywords": ["cancelar", "anular", "eliminar cita"]
+    },
+    {
+      "name": "consultar_citas",
+      "keywords": ["mis citas", "consultar citas", "ver citas"]
+    },
+    {
+      "name": "informacion",
+      "keywords": ["horario", "atención", "médicos", "especialidades"]
+    }
+  ]
+}
