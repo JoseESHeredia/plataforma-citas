@@ -46,12 +46,12 @@ recordBtn.onclick = async () => {
 
             addMessage("🎤 Enviando audio...", "user");
 
-            const formData = new FormData();
-            formData.append("audio", blob);
+            const base64 = await blobToBase64(blob);
 
             const resp = await fetch(`${API_BASE}/audio`, {
                 method: "POST",
-                body: formData
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ audio: base64 })
             });
 
             const data = await resp.json();
@@ -67,3 +67,12 @@ recordBtn.onclick = async () => {
         setTimeout(() => mediaRecorder.stop(), 3000);
     }
 };
+
+function blobToBase64(blob) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result.split(",")[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+    });
+}
