@@ -1,4 +1,4 @@
-const API_BASE = "https://58t7ldgd10.execute-api.us-east-1.amazonaws.com/prod/public";
+const API_BASE = "https://adqfu1fo7i.execute-api.us-east-1.amazonaws.com/prod/public";
 
 const messagesDiv = document.getElementById("messages");
 const textInput = document.getElementById("textInput");
